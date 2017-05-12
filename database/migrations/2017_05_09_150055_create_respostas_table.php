@@ -15,6 +15,7 @@ class CreateRespostasTable extends Migration
     {
         Schema::create('respostas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('enunciado_id');
             $table->text('descricao');
             $table->boolean('status');
         });
