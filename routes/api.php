@@ -13,10 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('/disciplinas', 'Api\DisciplinaController');
-Route::resource('/questionarios', 'Api\QuestionarioController');
-Route::resource('/enunciados', 'Api\EnunciadoController');
-Route::resource('/respostas', 'Api\RespostaController');
+
+
+Route::group(['middleware'=>['cors']], function(){
+    Route::resource('/disciplinas', 'Api\DisciplinaController');
+    Route::resource('/questionarios', 'Api\QuestionarioController');
+    Route::resource('/enunciados', 'Api\EnunciadoController');
+    Route::resource('/respostas', 'Api\RespostaController');
+    Route::resource('/alternativas', 'Api\AlternativaController');
+    Route::get('/relatorios', 'Api\RelatorioController@relatorio_home');
+});
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

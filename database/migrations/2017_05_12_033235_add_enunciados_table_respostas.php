@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRenunciadoIdTableRespostas extends Migration
+class AddEnunciadosTableRespostas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddRenunciadoIdTableRespostas extends Migration
      */
     public function up()
     {
-         Schema::table('respostas', function (Blueprint $table) {
-            $table->integer('resposta_id');
+        Schema::table('alternativas', function (Blueprint $table) {
+            $table->integer('enunciado_id');
         });
     }
 
