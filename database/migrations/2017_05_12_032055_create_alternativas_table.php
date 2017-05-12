@@ -15,9 +15,9 @@ class CreateAlternativasTable extends Migration
     {
         Schema::create('alternativas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('resposta_id');
+            $table->integer('enunciado_id');
+            $table->text('descricao');
             $table->boolean('status');
-
         });
     }
 
